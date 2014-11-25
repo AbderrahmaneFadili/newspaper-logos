@@ -14,6 +14,7 @@ while (($data = fgetcsv($file, 1000, ',')) !== FALSE) {
 			'name' => $data[0],
 			'country' => $data[1],
 			'readers' => $data[2],
+			'founded' => $data[3],
 			'image' => sanitize($data[0]).'.png',
 		);
 		
