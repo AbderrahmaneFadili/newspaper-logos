@@ -11,7 +11,12 @@ $(document).ready(function() {
 			.append('figure');
 		figure
 			.classed('newspaper', true)
+			.classed('category-europe', function(key) { return data[key].continent == 'Europe'; })
+			.classed('category-asia', function(key) { return data[key].continent == 'Asia'; })
+			.classed('category-northamerica', function(key) { return data[key].continent == 'North America'; })
+			.classed('category-southamerica', function(key) { return data[key].continent == 'South America'; })
 			.attr('data-order-readers', function(key) { return data[key].readers; })
+			.attr('data-order-founded', function(key) { return data[key].founded; })
 			.append('div')
 			.classed('image', true)
 			.attr('style', function(key) { 
@@ -28,7 +33,10 @@ $(document).ready(function() {
 				target: '.newspaper'
 			},
 			load: {
-				sort: 'order-readers:desc'
+				sort: 'random'
+			},
+			controls: {
+				/*toggleFilterButtons: true*/
 			},
 			animation: {
 				duration: 1000,

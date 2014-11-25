@@ -8,14 +8,15 @@ $buffer_female = array();
 while (($data = fgetcsv($file, 1000, ',')) !== FALSE) {
 	// echo '<pre>'.print_r($data).'</pre>';
 	
-	if ($i > 0 && $data[2] > 180000) {
+	if ($i > 0 && $data[4] > 180000) {
 		
-		$result[sanitize($data[0])] = array(
-			'name' => $data[0],
-			'country' => $data[1],
-			'readers' => $data[2],
-			'founded' => $data[3],
-			'image' => sanitize($data[0]).'.png',
+		$result[sanitize($data[1])] = array(
+			'name' => $data[1],
+			'country' => $data[2],
+			'continent' => $data[3],
+			'readers' => $data[4],
+			'founded' => $data[5],
+			'image' => sanitize($data[1]).'.png',
 		);
 		
 	}
@@ -41,8 +42,8 @@ foreach ($result as $fields) {
 
 function sanitize($name){
 	// Umlaute und leerzeichen ersetzen
-	$umlaute = array("/è/","/é/","/à/","/ä/","/ö/","/ü/","/Ä/","/Ö/","/Ü/","/ß/", "/ /", "/\//", "/\./", "/\(/", "/\)/", "/,/", "/'/");
-	$replace = array("e","e","a","ae","oe","ue","Ae","Oe","Ue","ss", "", "-", "", "", "", "-", "");
+	$umlaute = array("/è/","/é/","/à/","/ä/","/ö/","/ü/","/Ä/","/Ö/","/Ü/","/ß/", "/ /", "/\//", "/\./", "/\(/", "/\)/", "/,/", "/'/", "/í/");
+	$replace = array("e","e","a","ae","oe","ue","Ae","Oe","Ue","ss", "", "-", "", "", "", "-", "", "i");
 	$result = preg_replace($umlaute, $replace, $name);
 	
 	$result = strtolower($result);

@@ -25,9 +25,9 @@ figure.newspaper {
 	width: 12%;
 	height: 50px;
 	margin-bottom: 0.3%;
-	display: inline-block;
 	border-radius: 5px;
 	overflow: hidden;
+	display: none;
 }
 figure.newspaper .image {
 	float: left;
@@ -42,3 +42,9 @@ figure.newspaper .image {
 figure.newspaper .name {
 	display: none;
 }
+
+button.active {
+	background: green;
+}
+
+
