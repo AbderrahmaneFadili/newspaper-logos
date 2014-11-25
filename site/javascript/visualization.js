@@ -14,7 +14,9 @@ $(document).ready(function() {
 			.attr('data-order-readers', function(key) { return data[key].readers; })
 			.append('div')
 			.classed('image', true)
-			.attr('style', function(key) { return 'background-image: url(image/'+data[key].image+')' });
+			.attr('style', function(key) { 
+				return 'background-image: url(image/'+data[key].image+')'; 
+			});
 		figure
 			.append('div')
 			.classed('name', true)
