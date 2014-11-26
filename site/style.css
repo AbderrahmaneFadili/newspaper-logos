@@ -15,14 +15,18 @@ section#wrapper {
 	float: left;
 	width: 100%;
 }
+.controls {
+	width: 20%;
+	position: fixed;
+}
 section#container {
-	float: left;
-	width: 100%;
+	float: right;
+	width: 80%;
 	padding: 1% 1% 0;
-	text-align: justify;
+	/*text-align: justify;*/
 }
 figure.newspaper {
-	width: 12%;
+	width: 12.1%;
 	height: 50px;
 	margin-bottom: 0.3%;
 	border-radius: 5px;
