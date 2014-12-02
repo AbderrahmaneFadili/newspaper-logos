@@ -11,12 +11,13 @@ while (($data = fgetcsv($file, 1000, ',')) !== FALSE) {
 	if ($i > 0 && $data[4] > 180000) {
 		
 		$result[sanitize($data[1])] = array(
+			'image' => sanitize($data[1]).'.png',
 			'name' => $data[1],
 			'country' => $data[2],
 			'continent' => $data[3],
 			'readers' => $data[4],
 			'founded' => $data[5],
-			'image' => sanitize($data[1]).'.png',
+			'color' => $data[6],
 		);
 		
 	}
