@@ -7,7 +7,6 @@
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	color: #081822;
-	text-transform: uppercase;
 	font-size: 12px;
 }
 
@@ -17,6 +16,10 @@ html {
 
 body {
  	background: white;  
+}
+
+h3, h4, button {
+	text-transform: uppercase;
 }
 
 h3 {
@@ -61,6 +64,19 @@ header {
 	border-right: solid #ddd 1px;
 }
 
+.info {
+	display: none;
+}
+
+.info--image {
+	width: 200px;
+	height: 60px;
+	margin-top: 30px;
+	background-size: contain;
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
 section#container {
 	width: 100%;
 	height: 100%;
@@ -88,9 +104,11 @@ figure.newspaper .image {
 	background-repeat: no-repeat;
 	border: 2px solid white;
 }
+
+/*
 figure.newspaper .name {
 	display: none;
-}
+}*/
 
 button {
 	-webkit-border-radius: 5;

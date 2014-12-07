@@ -25,11 +25,24 @@ $(document).ready(function() {
 			.classed('image', true)
 			.attr('style', function(key) { 
 				return 'background-image: url(image/'+data[key].image+')'; 
-			});
-		figure
-			.append('div')
-			.classed('name', true)
-			.text(function(key) { return data[key].name; });
+			})
+			.on("click", function(key) {
+			            d3.select(".info").style('display', 'inline');
+			            d3.select(".info--name").html(function() { return data[key].name; });
+			            d3.select(".info--founded").html(function() { return data[key].founded; });
+			            d3.select(".info--readers").html(function() { return data[key].readers; });
+			            d3.select(".info--continent").html(function() { return data[key].continent; });
+			            d3.select(".info--color").html(function() { return data[key].color; });
+			            d3.select(".info--image").attr('style', function() { 
+							return 'background-image: url(image/'+data[key].image+')'; 
+						});
+			        });
+
+
+		// figure
+		// 	.append('div')
+		// 	.classed('name', true)
+		// 	.text(function(key) { return data[key].name; });
 			
 		
 		$('#container').mixItUp({
