@@ -235,6 +235,11 @@ section#wrapper {
 .info--title {
     font-weight: 700;
 }
+.info--welcome {
+	font-style: italic;
+	font-weight: 200;
+	font-size: 18px;
+}
 section#container {
     width: 100%;
     height: 100%;

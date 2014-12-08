@@ -31,6 +31,7 @@ $(document).ready(function() {
 				return 'background-image: url(image/'+data[key].image+')'; 
 			})
 			.on("click", function(key) {
+						$( ".info--welcome" ).hide();
 			            d3.select(".info").style('display', 'inline');
 			            d3.select(".info--name").html(function() { return data[key].name; });
 			            d3.select(".info--founded").html(function() { return data[key].founded; });
@@ -42,13 +43,11 @@ $(document).ready(function() {
 						});
 			        });
 
-
 		// figure
 		// 	.append('div')
 		// 	.classed('name', true)
 		// 	.text(function(key) { return data[key].name; });
 			
-		
 		$('#container').mixItUp({
 			selectors: {
 				target: '.newspaper'
