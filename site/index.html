@@ -1,76 +1,87 @@
-    <head>
-    </head>
-    <body>
-        
-        <script src="js/main.js"></script>
-    </body>
-</html>
-
-
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="utf-8">
     <meta name="description" content="Compare visual identities from the world's largest newspapers by circulation">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,900italic,400italic,100,700italic,300,700,500italic,100italic,300italic,900' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="style.css" type="text/css">
-	
-	<script src="javascript/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="javascript/d3.min.js" type="text/javascript"></script>
-	<script src="javascript/jquery.mixitup.js" type="text/javascript"></script>
-	<script src="javascript/visualization.js" type="text/javascript"></script>
-	
-	<title>The Daily Contrast</title>
+    <link href='http://fonts.googleapis.com/css?family=UnifrakturMaguntia' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,900italic,400italic,100,700italic,300,700,500italic,100italic,300italic,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script src="javascript/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="javascript/d3.min.js" type="text/javascript"></script>
+    <script src="javascript/jquery.mixitup.js" type="text/javascript"></script>
+    <script src="javascript/visualization.js" type="text/javascript"></script>
+    <script src="javascript/modernizr.custom.js"></script>
+
+    <title>The Daily Contrast</title>
 
 
 </head>
 
-<body>
-	<section id="wrapper">
-		<header>
-			The Daily Contrast
-		</header>
-		<hr>
-		<aside class="controls">
-			<h3>Sort</h3>
-			<button class="sort" data-sort="random">Random</button>
-			<button class="sort" data-sort="order-readers:desc">Circulation</button>
-			<button class="sort" data-sort="order-founded:asc">Age</button>
+<body class="demo-1">
+    <div id="ip-container" class="ip-container">
+        <header class="ip-header">
+            <h1 class="ip-logo">The Daily Contrast</h1>
+            <div class="ip-loader">
+                <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+                    <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
+                    <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z" />
+                </svg>
+            </div>
+        </header>
+        <section id="wrapper">
+            <hr class="top">
+            <aside class="controls">
+                <h3>Sort</h3>
+                <button class="sort" data-sort="random">Random</button>
+                <button class="sort" data-sort="order-readers:desc">Circulation</button>
+                <button class="sort" data-sort="order-founded:asc">Age</button>
 
-			<hr>
+                <hr>
 
-			<h3>Filter</h3>
-			<button class="filter" data-filter="all">Show all</button>
-			<h4>Geographic</h3>
-			<button class="filter" data-filter=".category-europe">Europe</button>
-			<button class="filter" data-filter=".category-asia">Asia</button>
-			<button class="filter" data-filter=".category-northamerica">North America</button>
-			<button class="filter" data-filter=".category-southamerica">South America</button>
-			<h4>Style</h3>
-			<button class="filter" data-filter=".category-color-black">Black / Traditional</button>
-			<button class="filter" data-filter=".category-color-red">Red / Popular</button>
-			<button class="filter" data-filter=".category-color-blue">Other</button>
+                <h3>Filter</h3>
+                <button class="filter" data-filter="all">Show all</button>
+                <h4>Geographic</h4>
+                <button class="filter" data-filter=".category-europe">Europe</button>
+                <button class="filter" data-filter=".category-asia">Asia</button>
+                <button class="filter" data-filter=".category-northamerica">North America</button>
+                <button class="filter" data-filter=".category-southamerica">South America</button>
+                <h4>Style</h4>
+                <button class="filter" data-filter=".category-color-black">Black / Traditional</button>
+                <button class="filter" data-filter=".category-color-red">Red / Popular</button>
+                <button class="filter" data-filter=".category-color-blue">Other</button>
 
-			<hr>
+                <hr>
 
-			<div class="info">
-				<div class="info--image"></div>
-				<p><span class="info--title">Title </span><span class="info--name"></span></p>
-				<br>
-				<p><span class="info--title">Founded </span><span class="info--founded"></span></p>
-				<p><span class="info--title">Circulation </span><span class="info--readers"></span></p>
-				<p><span class="info--title">Continent </span><span class="info--continent"></span></p>
-				<p><span class="info--title">Color Class </span><span class="info--color"></span></p>
-			</div>
+                <div class="info">
+                    <div class="info--image"></div>
+                    <p><span class="info--title">Title </span><span class="info--name"></span>
+                    </p>
+                    <br>
+                    <p><span class="info--title">Founded </span><span class="info--founded"></span>
+                    </p>
+                    <p><span class="info--title">Circulation </span><span class="info--readers"></span>
+                    </p>
+                    <p><span class="info--title">Continent </span><span class="info--continent"></span>
+                    </p>
+                    <p><span class="info--title">Color Class </span><span class="info--color"></span>
+                    </p>
+                </div>
 
-		</aside>
-		<section id="container">
-		</section>
-	</section>
+            </aside>
+            <section id="container">
+            </section>
+        </section>
 
+    </div>
+
+    <script src="javascript/pathLoader.js"></script>
+    <script src="javascript/main.js"></script>
 
 </body>
+
 </html>
