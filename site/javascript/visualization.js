@@ -32,12 +32,16 @@ $(document).ready(function() {
 			})
 			.on("click", function(key) {
 						$( ".info--welcome" ).hide();
+						
+						$('.newspaper.active').removeClass('active');
+						d3.select(this.parentNode).classed('active', true);
+						
 			            d3.select(".info").style('display', 'inline');
 			            d3.select(".info--name").html(function() { return data[key].name; });
 			            d3.select(".info--founded").html(function() { return data[key].founded; });
 			            d3.select(".info--readers").html(function() { return largeNumber(data[key].readers); });
 			            d3.select(".info--continent").html(function() { return data[key].continent; });
-			            d3.select(".info--color").html(function() { return data[key].color; });
+			            d3.select(".info--country").html(function() { return data[key].country; });
 			            d3.select(".info--image").attr('style', function() { 
 							return 'background-image: url(image/'+data[key].image+')'; 
 						});

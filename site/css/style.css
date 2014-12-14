@@ -259,6 +259,9 @@ figure.newspaper {
     -webkit-transition: box-shadow 0.5s, -webkit-transform 0.5s;
     transition: box-shadow 0.5s, -webkit-transform 0.5s;
 }
+figure.newspaper.active {
+	border: 3px solid #19abff;
+}
 figure.newspaper .image {
     float: left;
     width: 100%;
