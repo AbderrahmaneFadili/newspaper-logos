@@ -254,14 +254,11 @@ figure.newspaper {
     border-radius: 5px;
     overflow: hidden;
     display: none;
+    background: white;
     cursor: pointer;
-    
-    -webkit-transition: box-shadow 0.5s, -webkit-transform 0.5s;
-    transition: box-shadow 0.5s, -webkit-transform 0.5s;
+
 }
-figure.newspaper.active {
-	border: 3px solid #19abff;
-}
+
 figure.newspaper .image {
     float: left;
     width: 100%;
@@ -277,6 +274,10 @@ figure.newspaper:hover {
 	-webkit-transform: scale(1.3); /* Chrome, Safari, Opera */
     transform: scale(1.3);
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+    border: 3px solid #ccc;
+}
+figure.newspaper.active {
+	border: 3px solid #19abff;
 }
 figure.newspaper .name {
     display: none;
